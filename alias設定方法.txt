@@ -1,0 +1,8 @@
+$ vi .bashrc 
+
+ç≈å„
+
+PS1='\u@\h:$ ' 
+alias ls='ls -F'
+alias ll='ls -laF'
+alias la='ls -laF'
