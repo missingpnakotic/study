@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+kaisya="03"
+home="/home"
+
+##
+indata="/inputdata"
+inlist="/inputlist"
+
+##
+outdata="/outputdata"
+
+##
+echo "indata list directory"
+list=${home}${inlist}
+data=${home}${indata}
+
+echo "outdatadirectory"
+output=${home}${outdata}
+
+
+cd $list;pwd
+cd $data;pwd
+cd $output;pwd
+
+
+##
+daylist=`date +"%Y%m%d"`
+
+
+listfile="E"${kaisya}${daylist}??????".list"
+
+## E0320130808122354.list
+cp -pi ${list}"/"${listfile} ${output}
+
+cat ${output}"/"${listfile} 
+
+
+##foreach 使えないのでforで配列使えという
+## vi で入力の改行コード余白けすこと
+
+for TXT in `cat ${output}"/"${listfile}`
+do
+cp -p ${data}"/"${TXT[@]} ${output}
+done
